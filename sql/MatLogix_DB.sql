@@ -11,6 +11,30 @@ CREATE TABLE admin (
 - Insert new admin with simple password
 INSERT INTO admin (username, password) VALUES ('admin', 'admin123');
 
+-- Materials table
+CREATE TABLE materials (
+    material_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    category VARCHAR(100),
+    price DECIMAL(10,2) NOT NULL,
+    unit_type VARCHAR(50) NOT NULL,
+    stock INT NOT NULL,
+    description TEXT,
+    image VARCHAR(255) DEFAULT 'default.jpg'
+);
+
+-- Insert sample materials with specific image names
+INSERT INTO materials (name, category, price, unit_type, stock, description, image) VALUES
+('Cement Bag', 'Cement', 1450.00, 'Per Bag', 200, '50kg high-quality cement bag', 'cement.jpg'),
+('Crushed Stones', 'Stones', 25000.00, 'Per Tractor', 50, 'High-quality crushed stones for construction', 'crushed_stones.jpg'),
+('Bricks', 'Bricks', 35.00, 'Per Unit', 5000, 'Standard red clay bricks', 'bricks.jpg'),
+('Cement Bricks', 'Bricks', 70.00, 'Per Unit', 2500, 'Strong cement bricks for durability', 'cement_bricks.jpg'),
+('Plastering Sand', 'Sand', 25000.00, 'Per Tractor', 30, 'Fine plastering sand for smooth finish', 'plastering_sand.jpg'),
+('Masonry Sand', 'Sand', 25000.00, 'Per Tractor', 30, 'Medium-grain masonry sand', 'masonry_sand.jpg'),
+('Fill Sand', 'Sand', 25000.00, 'Per Tractor', 30, 'Coarse fill sand for foundation', 'fill_sand.jpg'),
+('Gravel', 'Sand', 25000.00, 'Per Tractor', 30, 'Rounded gravel sand for drainage', 'gravel.jpg'),
+('Rubble Stone', 'Stone', 25000.00, 'Per Tractor', 25, 'Large rubble stone for foundation work', 'rubble_stone.jpg');
+
 
 
 
